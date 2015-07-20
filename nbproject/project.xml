@@ -25,7 +25,11 @@
                     </run-dependency>
                 </dependency>
             </module-dependencies>
-            <public-packages/>
+            <public-packages>
+                <package>com.Stomrage.grassybanana.GrassArea</package>
+                <package>com.Stomrage.grassybanana.GrassFactory</package>
+                <package>com.Stomrage.grassybanana.Shared</package>
+            </public-packages>
         </data>
     </configuration>
 </project>
