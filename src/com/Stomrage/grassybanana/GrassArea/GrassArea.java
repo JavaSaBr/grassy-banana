@@ -265,7 +265,7 @@ public class GrassArea extends Geometry implements GrassObject {
         }
         //The GrassArea as well as the TerrainQuad is located in 0,0,0
         location = new Vector3f(0, 0, 0);
-
+        GrassFactory.getInstance().initGrassFactory();
         GrassFactory.getInstance().setGrassDistance(grassDist);
         GrassFactory.getInstance().setTerrain(terrain);
         GrassFactory.getInstance().setAssetManager(assetManager);

@@ -35,16 +35,16 @@ public class GrassFactory {
     //The TerrainQuad is used to get the height of the terrain
     private TerrainQuad terrain;
     //The array of image raster for each density map
-    private ArrayList<ImageRaster> densityTextures = new ArrayList<ImageRaster>();
+    private ArrayList<ImageRaster> densityTextures;
     //This array is here to help the save of the density map (contains the path to the density texture)
-    private ArrayList<Image> densityTexturesImage = new ArrayList<Image>();
+    private ArrayList<Image> densityTexturesImage;
     private AssetManager assetManager;
     private int terrainSize = 0;
     //The number of density map
     private int layerNumberMax = 0;
     private float grassDist = 0;
     //This hash map contains all the layer of the GrassArea. Every DensityMap+ColorChannel is a HashKey value in this HashMap
-    private HashMap<HashKey, Layer> layerHash = new HashMap<HashKey, Layer>();
+    private HashMap<HashKey, Layer> layerHash;
     //The perlin noise
     private PerlinNoise perlinNoise;
     private Texture dissolveTexture;
@@ -456,5 +456,11 @@ public class GrassFactory {
     public void setLayerSize(int densityMap, int colorChannel, float minSize, float maxSize) {
         layerHash.get(new HashKey(densityMap, colorChannel)).minSize = minSize;
         layerHash.get(new HashKey(densityMap, colorChannel)).maxSize = maxSize;
+    }
+
+    public void initGrassFactory() {
+        this.densityTextures = new ArrayList<ImageRaster>();
+        this.densityTexturesImage = new ArrayList<Image>();
+        this.layerHash = new HashMap<HashKey, Layer>();
     }
 }
